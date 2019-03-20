@@ -3,8 +3,15 @@ serverinventory:
 {% for item in csvfile.split("\n") %}
 {%   if loop.index != 1 %}
 {%     set list = item.split(",") %}
-  - Configuration_Item: '{{ list[0]|trim() }}'
-    Release_date: '{{ list[1]|trim() }}'
+  - configuration_Item: '{{ list[0]|trim() }}'
+    environment: '{{ list[1]|trim() }}'
+    assignment_group: '{{ list[2]|trim() }}'
+    assigned _to: '{{ list[3]|trim() }}'
+    change_coordinator: '{{ list[4]|trim() }}'
+    start_date: '{{ list[5]|trim() }}'
+    end_date: '{{ list[6]|trim() }}'
+    short_description: '{{ list[7]|trim() }}'
+    description: '{{ list[8]|trim() }}'
   
 {%   endif %}
 {% endfor %}
