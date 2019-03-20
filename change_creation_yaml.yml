@@ -17,6 +17,9 @@
         end_date: "{{item.end_date}}"
         short_description: "{{item.short_description}}"
         description: "{{item.description}}"
+        implementation_plan: "{{item.implementation_plan}}"
+        backout_plan: "{{item.backout_plan}}"
+        test_plan: "{{item.test_plan}}"
         type: Normal
       instance: dev54182
       password: 009@Shreya
