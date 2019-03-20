@@ -8,10 +8,15 @@
     register: new_change_request
     snow_record:
       data:
-        assignment_group: Unix Server Operations
-        category: Server Infrastructure
-        short_description: 'Prm team - March/20/2019-Updated'
-        start_date: "{{item.Release_date}}"
+        cmdb_ci: "{{item.configuration_item}}"
+        Environment: "{{item.environment}}"
+        Assignment_group: "{{item.assignment_group}}"
+        Assigned_to: "{{item.assigned_to}}"
+        Change_Coordinator: "{{item.change_coordinator}}"
+        start_date: "{{item.start_date}}"
+        end_date: "{{item.end_date}}"
+        short_description: "{{item.short_description}}"
+        description: "{{item.description}}"
         type: Normal
       instance: dev54182
       password: 009@Shreya
