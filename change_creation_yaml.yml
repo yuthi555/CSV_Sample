@@ -9,10 +9,10 @@
     snow_record:
       data:
         cmdb_ci: "{{item.configuration_item}}"
-        Environment: "{{item.environment}}"
-        Assignment_group: "{{item.assignment_group}}"
-        Assigned_to: "{{item.assigned_to}}"
-        Change_Coordinator: "{{item.change_coordinator}}"
+        u_environment: "{{item.environment}}"
+        assignment_group: "{{item.assignment_group}}"
+        assigned_to: "{{item.assigned_to}}"
+        u_change_coordinator: "{{item.change_coordinator}}"
         start_date: "{{item.start_date}}"
         end_date: "{{item.end_date}}"
         short_description: "{{item.short_description}}"
