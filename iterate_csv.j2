@@ -3,7 +3,7 @@ serverinventory:
 {% for item in csvfile.split("\n") %}
 {%   if loop.index != 1 %}
 {%     set list = item.split(",") %}
-  - configuration_Item: '{{ list[0]|trim() }}'
+  - configuration_item: '{{ list[0]|trim() }}'
     environment: '{{ list[1]|trim() }}'
     assignment_group: '{{ list[2]|trim() }}'
     assigned_to: '{{ list[3]|trim() }}'
