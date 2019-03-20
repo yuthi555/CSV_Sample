@@ -12,6 +12,9 @@ serverinventory:
     end_date: '{{ list[6]|trim() }}'
     short_description: '{{ list[7]|trim() }}'
     description: '{{ list[8]|trim() }}'
+    implementation_plan: '{{ list[9]|trim() }}'
+    backout_plan: '{{ list[10]|trim() }}'
+    test_plan: '{{ list[11]|trim() }}'
   
 {%   endif %}
 {% endfor %}
