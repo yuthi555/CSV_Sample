@@ -4,7 +4,7 @@
   gather_facts: false
   become: false
   vars:
-    csvfile: "{{ lookup('file', 'Server_Inventory_Linux.csv','date') }}"
+    csvfile: "{{ lookup('file', 'Server_Inventory_Linux.csv' )}}"
   tasks:
     - name: Parse CSV To YAML
       template:
