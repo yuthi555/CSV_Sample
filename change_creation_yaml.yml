@@ -25,7 +25,9 @@
         description: "{{item.Description}}"
         start_date: "{{item.Planning_Start_date}}"
         end_date: "{{item.Planning_End_date}}"
-        type: "{{item.Type}}"
+        type: Normal
+      with_items:
+           - "{{ serverinventory }}"
     register: new_incident
   - debug:
       var: new_incident.record
