@@ -2,7 +2,7 @@
 serverinventory:
 {% for item in csvfile.split("\n") %}
 {%   if loop.index != 1 %}
-{%     set list = item.split(",") %}
+{%    set list = item.split(",") %}
   - Requested_By: '{{ list[0]|trim() }}'
     Category: '{{ list[1]|trim() }}'
     CI: '{{ list[2]|trim() }}'
@@ -13,6 +13,5 @@ serverinventory:
     Planning_Start_date: '{{ list[7]|trim() }}'
     Planning_End_date: '{{ list[8]|trim() }}'
     Type: '{{ list[9]|trim() }}'
-
 {%   endif %}
 {% endfor %}
