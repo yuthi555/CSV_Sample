@@ -1,0 +1,31 @@
+---
+- name: Create ticket with notes
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  vars_files:
+    - Server_Inventory_hosts.yml
+  tasks:
+  - name: include vars
+    include_vars: change_request_vars.yml
+  - name: Create a change request
+    snow_record:
+      state: present
+      table: change_request
+      username: "{{ sn_username }}"
+      password: "{{ sn_password }}"
+      instance: "{{ sn_instance }}"
+      data:
+        requested_by: "{{item.Requested_By}}"
+        category: "{{item.Category}}"
+        cmdb_ci: "{{item.CI}}"
+        assignment_group: "{{item.Assignment_Group}}"
+        assigned_to: "{{item.Assigned_To}}"
+        short_description: "{{item.Short_Description}}"
+        description: "{{item.Description}}"
+        start_date: "{{item.Planning_Start_date}}"
+        end_date: "{{item.Planning_End_date}}"
+        type: "{{item.Type}}"
+    register: new_incident
+  - debug:
+      var: new_incident.record
